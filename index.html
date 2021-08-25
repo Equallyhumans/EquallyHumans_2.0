@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equally Humans</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    scroll-behavior: smooth;
+}
+
+p{
+    font-family: 'Raleway', sans-serif;
+    
+}
+
+h3{
+    font-family: 'Raleway', sans-serif;
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    padding: 60px 0;
+}
+
+.header{
+    height: 100vh;
+    /* 02 */
+    background-image: linear-gradient(to top, rgba(251, 194, 235, 0.486) 0%, hsla(218, 68%, 79%, 0.514) 100%), url(img/Fondo\ de\ Pantalla\ 1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.head{
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+
+.hamburguer{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: #fff;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+}
+
+.menu-navegacion{
+    position: fixed;
+    top: 0;
+    width: 30vw;
+    height: 100%;
+    /* background-image: linear-gradient(to top, #fbc2eb 0%, #a6c0ee 100%); */
+    /* 02 */
+    background-image: linear-gradient(to top, #c1acd4 0%, #bd91b0 100%);
+    /* 028 */
+    background-image: linear-gradient(135deg, #8247ee 0%, #c9a4ee 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    right: 0;
+    transform: translateX(110%);
+    transition:transform 0.3s ease-in-out;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+}
+
+.spread{
+    transform: translateX(0);
+}
+
+.menu-navegacion a{
+    color: #fff;
+    text-decoration: none;
+    font-style: italic;
+    font-size: 25px;
+}
+
+
+
+.titulo{
+    font-size: 150px;
+    margin-bottom: 15px;
+    font-style: italic;
+   
+}
+
+.copy{
+    font-weight: 300;
+    font-size: 100px;
+    
+}
+
+/* Services */
+
+.subtitulo{
+    color: #9f8ad0;
+    font-size: 55px;
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 30px;
+    font-style: italic;
+    
+    
+}
+
+.contenedor-servicio{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.contenedor-servicio img{
+    width: 40%;
+}
+
+.checklist-servicio{
+    width: 45%;
+}
+
+.service{
+    margin-bottom: 20px;
+}
+
+.n-service{
+    margin-bottom: 7px;
+    color: #9f8ad0;
+}
+
+.number{
+    display: inline-block;
+    /* 02 */
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    font-weight: 700;
+    
+}
+
+.gallery{
+    background: #f2f2f2;
+}
+
+.contenedor-galeria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.img-galeria{
+    width: 40%;
+    display: block;
+    margin-bottom: 15px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .6);
+    cursor: pointer;
+}
+
+.imagen-light{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.534);
+    transform: translate(100%);
+    transition: transform .2s ease-in-out;
+}
+
+.agregar-imagen{
+    width: 60%;
+    transform: scale(0);
+    border-radius: 10px;
+    transition: transform .3s .2s;
+}
+
+.showImage{
+    transform: scale(1);
+}
+
+.show{
+    transform: translate(0);
+}
+
+.close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.experts{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.cont-expert{
+    width: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cont-expert img{
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+
+.n-expert{
+    width: 100%;
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+footer{
+    background: #aa73e2 ;
+    padding-bottom: 0.1px;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 60px;
+    padding-bottom: 40px;
+
+}
+
+
+.contact-us{
+    width: 40%;
+    color: #fff;
+}
+
+.brand{
+    
+    font-size: 40px;
+    font-style: italic;
+}
+
+.brand+p{
+    font-weight: 500;
+}
+
+.social-media{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social-media-icon{
+    display: inline-block;
+    margin-left: 20px;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+}
+
+.social-media-icon i{
+    font-size: 30px;
+    line-height: 60px;
+}
+
+.line{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    height: 2px;
+    background: #fff;
+    margin-bottom: 60px;
+}
+
+.social-media-icon:hover{
+    background: #fff;
+    color:#764ba2;
+}
+
+@media screen and (max-width: 800px){
+    .menu-navegacion{
+        width: 50vw;
+    }
+
+    .titulo{
+        font-size: 40px;
+    }
+
+    .contenedor-servicio img{
+        width: 80%;
+        margin-bottom: 40px;
+    }
+    
+    .checklist-servicio{
+        width: 80%;
+    }
+
+    .service{
+        margin-bottom: 30px;
+    }
+
+    .img-galeria{
+        width: 45%;
+    }
+    
+    .agregarImagen{
+        width: 80%;
+    }
+
+    
+    .cont-expert{
+        width: 80%;
+    }
+    
+    .footer-content{
+        justify-content: center;
+    }
+
+    .social-media{
+        width: 80%;
+        justify-content: space-evenly;
+    }
+
+    .social-media-icon{
+        margin-left: 0;
+    }
+
+    .contact-us{
+        text-align: center;
+        width: 80%;
+        margin-bottom: 40px;
+    }
+    
+}
+
+
+@media screen and (max-width: 500px){
+    .menu-navegacion{
+        width: 65vw;
+    }
+
+    .hamburguer{
+        top: 20px;
+        right: 20px;
+    }
+
+    .titulo{
+        font-size: 30px;
+    }
+
+    .subtitulo{
+        font-size: 30px;
+    }
+
+    .img-galeria{
+        width: 95%;
+    }
+    
+    .agregar-imagen{
+        width: 90%;
+    }
+
+    .social-media{
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .social-media-icon{
+        margin-left: 0;
+    }
+
+    .contact-us{
+        text-align: center;
+        width: 95%;
+        margin-bottom: 40px;
+    }
+    
+}
+    </style>
+</head>
+<body>
+    
+    <header class="header" id="inicio">
+        <img class="hamburguer" src="img/hamburguesa.svg" alt="">
+        <nav class="menu-navegacion">
+                <a href="Usuarios.html">Usuarios</a>
+                <a href="Infórmate.html">Infórmate</a>
+                <a href="Proyectos.html">Proyectos</a>
+                <a href="Contáctanos.html">Contáctanos</a>
+                
+        </nav>
+        <div class="contenedor head">
+            <h1 class="titulo">Equally Humans</h1>
+            <p class="copy">ღ </p>
+        </div>
+        
+    </header>
+    <main>
+        <section class="services contenedor" id="servicio">
+            <h2 class="subtitulo">Objetivo General</h2>
+            <div class="contenedor-servicio">
+                <img src="img/Team success _Isometric.svg" alt="">
+                <div class="checklist-servicio">
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">❥</span>Identificar las diferencias en cuanto a las condiciones laborales entre los hombres y mujeres adultos empleados en la localidad de Suba en la ciudad de Bogotá.</h3>
+                        <p></p>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">❥</span>.</h3>
+                        <p></p>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">❥</span>.</h3>
+                        <p></p>
+                    </div>
+                
+    
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gallery" id="galeria">
+            <div class="contenedor">
+                <h2 class="subtitulo">Grandes Mujeres</h2>
+                <div class="contenedor-galeria">
+                    <img src="img/La Pola.webp" class="img-galeria" alt="Hola">
+                    <img src="img/Maria Cano.jpg" class="img-galeria" alt="">
+                    <img src="img/Débora Arango.jpg" class="img-galeria" alt="">
+                    <img src="img/Antonia Santos.jpg" class="img-galeria" alt="">
+                </div>
+            </div>
+        </section>
+        <div class="imagen-light">
+            <img src="img/close.svg" alt="" class="close">
+            <img src="" alt="" class="agregar-imagen">
+        </div>
+        <section class="contenedor" id="expertos">
+            <h2 class="subtitulo">Queremos:</h2>
+            <section class="experts">
+                <div class="cont-expert">
+                    <img src="img/Presentación a niños.svg" alt="">
+                    <h3 class="n-expert">Informar</h3>
+                </div>
+                <div class="cont-expert">
+                    <img src="img/Teacher_Isometric.svg" alt="">
+                    <h3 class="n-expert">Enseñar</h3>
+                </div>
+                <div class="cont-expert">
+                    <img src="img/Team work_Isometric (1).svg" alt="">
+                    <h3 class="n-expert">Concientizar</h3>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="contenedor footer-content">
+                <div class="contact-us">
+                    <h2 class="brand">Equally Humans</h2>
+                    <p>"La igualdad de género tiene que ser una realidad vivida"</p>
+                    <p> -Michelle Bachelet</p>
+                </div>
+                <div class="social-media">
+                
+                    <a href="https://twitter.com/EquallyHumans_" class="social-media-icon">
+                        <i class='bx bxl-twitter' ></i>
+                    </a>
+                    <a href="https://www.instagram.com/equally.humans/?hl=es" class="social-media-icon">
+                        <i class='bx bxl-instagram' ></i>
+                    </a>
+                </div>
+        </div>
+        <div class="line"></div>
+    </footer>
+    <script src="js/menu.js"></script>
+    <script src="js/lightbox.js"></script>
+</body>
+</html>
